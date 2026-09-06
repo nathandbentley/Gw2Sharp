@@ -10,5 +10,8 @@ namespace Gw2Sharp.WebApi.V2.Models
 
         [JsonPropertyName("guild")]
         public Guid? Guild { get; set; }
+
+        [JsonIgnore]
+        public ApiHttpResponseInfo HttpResponseInfo { get; set; } = new ApiHttpResponseInfo();
     }
 }
