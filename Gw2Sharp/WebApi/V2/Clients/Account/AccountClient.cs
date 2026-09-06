@@ -87,7 +87,7 @@ namespace Gw2Sharp.WebApi.V2.Clients
             this.titles = new AccountTitlesClient(connection, gw2Client);
             this.wallet = new AccountWalletClient(connection, gw2Client);
             this.worldBosses = new AccountWorldBossesClient(connection, gw2Client);
-            this.wvw = new AccountWvwClient(connection);
+            this.wvw = new AccountWvwClient(connection, gw2Client);
         }
 
         /// <inheritdoc />
