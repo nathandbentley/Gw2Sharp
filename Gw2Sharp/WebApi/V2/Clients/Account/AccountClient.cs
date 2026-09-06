@@ -44,6 +44,7 @@ namespace Gw2Sharp.WebApi.V2.Clients
         private readonly IAccountTitlesClient titles;
         private readonly IAccountWalletClient wallet;
         private readonly IAccountWorldBossesClient worldBosses;
+        private readonly IAccountWvwClient wvw;
 
         /// <summary>
         /// Creates a new <see cref="AccountClient"/> that is used for the API v2 account endpoint.
@@ -86,6 +87,7 @@ namespace Gw2Sharp.WebApi.V2.Clients
             this.titles = new AccountTitlesClient(connection, gw2Client);
             this.wallet = new AccountWalletClient(connection, gw2Client);
             this.worldBosses = new AccountWorldBossesClient(connection, gw2Client);
+            this.wvw = new AccountWvwClient(connection);
         }
 
         /// <inheritdoc />
@@ -178,7 +180,9 @@ namespace Gw2Sharp.WebApi.V2.Clients
 
         /// <inheritdoc />
         public virtual IAccountWorldBossesClient WorldBosses => this.worldBosses;
-
+        
+        /// <inheritdoc />
+        public virtual IAccountWvwClient Wvw => this.wvw;
 
         /// <inheritdoc />
         public async Task<Account> GetAsync(CancellationToken cancellationToken = default) =>
