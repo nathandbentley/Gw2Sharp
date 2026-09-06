@@ -200,5 +200,10 @@ namespace Gw2Sharp.WebApi.V2.Clients
         /// Requires scopes: account, progression.
         /// </summary>
         IAccountWorldBossesClient WorldBosses { get; }
+        /// <summary>
+        /// Gets the WvW team and Battle guild guid
+        /// Requires scopes: account
+        /// </summary>
+        IAccountWvwClient Wvw { get; }
     }
 }
