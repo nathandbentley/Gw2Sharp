@@ -1,17 +1,23 @@
 using System;
-using System.Text.Json.Serialization;
 
 namespace Gw2Sharp.WebApi.V2.Models
 {
+    /// <summary>
+    /// Represents account WvW data.
+    /// </summary>
     public class AccountWvw : IApiV2Object
     {
-        [JsonPropertyName("team")]
+        /// <summary>
+        /// The active WvW match team ID.
+        /// </summary>
         public int Team { get; set; }
 
-        [JsonPropertyName("guild")]
+        /// <summary>
+        /// The active WvW guild GUID.
+        /// </summary>
         public Guid? Guild { get; set; }
 
-        [JsonIgnore]
-        public ApiHttpResponseInfo HttpResponseInfo { get; set; } = new ApiHttpResponseInfo();
+        /// <inheritdoc />
+        public ApiV2HttpResponseInfo? HttpResponseInfo { get; set; } = default!;
     }
 }
